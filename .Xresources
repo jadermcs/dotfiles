@@ -1,0 +1,68 @@
+URxvt*font:			xft:Source Code Pro for Powerline:medium:size=9,xft:Symbola:size=9
+URxvt.letterSpace:          -1
+URxvt*intensityStyles:		false
+URxvt*urgentOnBell:		true
+URxvt*saveLines:		9999
+URxvt*scrollBar:		false
+URxvt*scrollTtyOutput:		false
+URxvt*scrollWithBuffer:		true
+URxvt*scrollTtyKeypress:	true
+URxvt*internalBorder:		8
+URxvt*cursorBlink:		true
+URxvt*cursorUnderline:		false
+URxvt*pointerBlank:		true
+URxvt*secondaryScreen:		true
+URxvt*secondaryScroll:		false
+URxvt*depth:			32
+URxvt*perl-ext-common:		default,matcher,clipboard,url-select,keyboard-select,fullscreen
+URxvt*url-select.launcher:	firefox
+URxvt*url-select.underline:	true
+
+Xft.dpi: 96
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! Colors
+*.foreground:  #dedacf
+*.background:  #171717
+*.cursorColor: #bbbbbb
+!
+! Black
+*.color0:      #000000
+*.color8:      #313131
+!
+! Red
+*.color1:      #ff615a
+*.color9:      #f58c80
+!
+! Green
+*.color2:      #b1e969
+*.color10:     #ddf88f
+!
+! Yellow
+*.color3:      #ebd99c
+*.color11:     #eee5b2
+!
+! Blue
+*.color4:      #5da9f6
+*.color12:     #a5c7ff
+!
+! Magenta
+*.color5:      #e86aff
+*.color13:     #ddaaff
+!
+! Cyan
+*.color6:      #82fff7
+*.color14:     #b7fff9
+!
+! White
+*.color7:      #dedacf
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #ffffff
