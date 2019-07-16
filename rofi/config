@@ -1,0 +1,4 @@
+rofi.font:          IBM Plex Mono 9
+rofi.show-icons:    true
+rofi.drun-icon-theme: Papirus
+rofi.theme: ~/.config/rofi/themes/sidebar-wombat
