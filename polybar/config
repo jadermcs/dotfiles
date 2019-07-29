@@ -37,7 +37,7 @@ black = #000000
 ;   variables
 ;=====================================================
 [variables]
-bar-height = 12
+bar-height = 16
 bar-border-size = 1
 
 label-padding = 1
@@ -50,8 +50,8 @@ wlan=wlp3s0
 ;   fonts
 ;=====================================================
 [fonts]
-font-0 = "Source Code Pro for Powerline:size=9;2"
-font-1 = "xos4 Terminess Powerline:size=8;2"
+font-0 = "Iosevka Nerd Font:size=9;3"
+font-1 = "Iosevka Nerd Font:size=9;2"
 font-2 = "Siji:size=8:antialias=false;2"
 
 ;=====================================================
@@ -71,7 +71,7 @@ margin-bottom = 0
 ;   bar/top
 ;=====================================================
 [bar/top]
-monitor = eDP-1
+monitor = eDP1
 height = ${variables.bar-height}
 bottom = false
 fixed-center = true
@@ -86,7 +86,7 @@ font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = ws_icon i3 lhb lbs ti_icon lsb title
+modules-left = i3 lhb lbs ti_icon lsb title
 modules-center =
 modules-right = wifi xkeyboard cpu temperature volume backlight battery date time
 
@@ -260,16 +260,16 @@ strip-wsnumbers = true
 pin-workspaces = true
 fuzzy-match = true
 
-ws-icon-0 = 1;1
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;5
-ws-icon-5 = 6;6
-ws-icon-6 = 7;7
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
-ws-icon-9 = 0;0
+;ws-icon-0 = 1
+;ws-icon-1 = 2
+;ws-icon-2 = 3
+;ws-icon-3 = 4
+;ws-icon-4 = 5
+;ws-icon-5 = 6
+;ws-icon-6 = 7
+;ws-icon-7 = 8
+;ws-icon-8 = 9
+;ws-icon-9 = 0
 
 format-background = ${colors.section}
 format-foreground = ${colors.foreground}
@@ -283,10 +283,10 @@ label-visible-background = ${colors.section}
 label-urgent-foreground = ${colors.warn}
 label-urgent-background = ${colors.section}
 
-label-focused = %{T2} %index% %{T-}
-label-unfocused = %{T2} %index% %{T-}
-label-visible = %{T2} %index% %{T-}
-label-urgent = %{T2} %index% %{T-}
+label-focused = %{T1} %index% %{T-}
+label-unfocused = %{T1} %index% %{T-}
+label-visible = %{T1} %index% %{T-}
+label-urgent = %{T1} %index% %{T-}
 
 label-mode = %mode%
 label-mode-padding = 1
@@ -316,7 +316,7 @@ type = internal/cpu
 inherit = section/base
 interval = 1
 
-label = %{T3}%{T-} %percentage%%
+label = %{T3}%{T-}%percentage%%
 
 ;=====================================================
 ;   module/memory
@@ -326,7 +326,7 @@ type = internal/memory
 inherit = section/base
 interval = 3
 
-label = %{T3}%{T-} %gb_used:2%
+label = %{T3}%{T-}%gb_used:2%
 
 ;=====================================================
 ;   module/wifi
@@ -338,8 +338,8 @@ interface = ${variables.wlan}
 interval = 1
 accumulate-stats = false
 
-label-connected = "%{T3}%{T-} %{T3}%{T-} %downspeed:% %{T3}%{T-} %upspeed:%"
-label-disconnected = "%{T3}%{F#1D1F21}%{F- T-}"
+label-connected = "%{T3}%{T-} %{T3}%{T-} %downspeed:% %{T3}%{T-} %upspeed:%"
+label-disconnected = "%{T3}%{F#1D1F21}%{F- T-}"
 
 ;=====================================================
 ;   module/eth
@@ -363,7 +363,7 @@ inherit = section/base
 interval = 1
 date = %a %d %b
 
-label = %{T3}%{T-} %date%
+label = %{T3}%{T-}%date%
 
 ;=====================================================
 ;   module/time
@@ -373,7 +373,7 @@ type = internal/date
 interval = 1
 time = %H:%M
 
-label = "%{T3}%{T-} %time% "
+label = "%{T3}%{T-} %time% "
 
 ;=====================================================
 ;   module/volume
@@ -383,8 +383,8 @@ type = internal/pulseaudio
 inherit = section/base
 interval = 1
 
-label-volume = %{T3}%{T-} %percentage:%%
-label-muted = %{T3}%{T-}
+label-volume = %{T3}%{T-}%percentage:%%
+label-muted = %{T1}n0%{T-}
 
 ;=====================================================
 ;   module/backlight
@@ -397,7 +397,7 @@ inherit = section/base
 enable-scroll = false
 
 format = <label>
-label = %{T3}%{T-} %percentage:%%
+label = %{T3}%{T-}%percentage:%%
 
 ;=====================================================
 ;   module/battery
@@ -410,13 +410,13 @@ adapter = AC
 full-at = 95
 
 format-charging = <label-charging>
-label-charging = %{T3}%{T-} %percentage:%%
+label-charging = %{T3}%{T-}%percentage:%%
 
 format-discharging = <label-discharging>
-label-discharging = %{T3}%{T-} %percentage:%%
+label-discharging = %{T3}%{T-}%percentage:%%
 
 format-full = <label-full>
-label-full = %{T3}%{T-} %percentage:%%
+label-full = %{T3}%{T-}%percentage:%%
 
 ;=====================================================
 ;   module/temperature
@@ -427,8 +427,8 @@ inherit = section/base
 thermal-zone = 0
 warn-temperature = 55
 
-label = %{T3}%{T-} %temperature-c%
-label-warn = %{T3}%{T-} %temperature-c%
+label = %{T3}%{T-}%temperature-c%
+label-warn = %{T3}%{T-}%temperature-c%
 
 ;=====================================================
 ;   module/updates
@@ -449,14 +449,14 @@ label-padding = ${variables.label-padding}
 
 exec = ~/bin/arch_updates.sh
 interval = 3600
-label = %{T3}%{T-} %output%
+label = %{T3}%{T-}%output%
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 inherit = section/base
 
-label-layout = " %{T3}%{T-} %layout% "
+label-layout = " %{T3}%{T-}%layout%"
 
 label-indicator-padding = 2
 label-indicator-margin = 1

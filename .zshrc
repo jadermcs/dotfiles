@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jader/.oh-my-zsh
 
-ZSH_THEME="nebirhos"
+ZSH_THEME="lambda"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -89,15 +89,12 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fuctions and aliases
-alias vi="nvim"
 alias zshconfig="vi ~/.zshrc"
-alias viconfig="vi ~/.config/nvim/init.vim"
+alias viconfig="vi ~/.vimrc"
+alias feh="feh --image-bg \#353535"
 function open() {
     xdg-open $1 & disown
 }
 function cpy() {
     xclip -selection clipboard $1
 }
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export XDG_CONFIG_HOME=$HOME/.config

@@ -11,8 +11,10 @@ cut
 paste 
 open_with
 gM
+
+open_with 
+dD
+delete
 cut
 paste
-
-delete
-open_with 
+open_with vi

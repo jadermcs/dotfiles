@@ -1,4 +1,4 @@
-URxvt*font:			xft:Source Code Pro for Powerline:medium:size=9,xft:Symbola:size=9
+URxvt*font:			xft:Iosevka Term:size=9
 URxvt.letterSpace:          -1
 URxvt*intensityStyles:		false
 URxvt*urgentOnBell:		true

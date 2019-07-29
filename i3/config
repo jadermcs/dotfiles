@@ -8,38 +8,32 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id redshift
+
+# exec --no-startup-id redshift
+exec --no-startup-id feh --randomize --bg-scale ~/Pictures/wall/*
+exec --no-startup-id xautolock -time 10 -locker /usr/bin/i3lock-fancy -detectsleep
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-set $TERMINAL urxvt-256color
+set $TERMINAL urxvt
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:IBM Plex Mono 9
+font pango:Iosevka Term 9
 
 default_border pixel 2
 default_floating_border pixel 2
-# useless gaps
 gaps inner 6
 gaps outer 0
-#gaps horizontal <px>
-#gaps vertical <px>
-# gaps top 8
-#gaps right <px>
-# gaps bottom 4
-#gaps left <px>
 
 #hide_edge_borders smart
-#smart_gaps on
+smart_gaps on
 smart_borders on
 # Set variables for floating and un-floating commands
 set $FLOAT-border floating enable, border pixel 3
 set $FLOAT-noborder floating enable, border none
-# new_window 1pixel
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -214,5 +208,5 @@ for_window [class="mpv"] $FLOAT-noborder
 # for_window [class="mpv"] sticky enable
 
 # print screen
-bindsym Print exec --no-startup-id scrot ~/Pictures/Screenshots/screenshot-%Y%m%d-%H:%M:%S.png & notify-send -u low $'Screenshot' 'saved to ~/Pictures/Screenshots'
-bindsym Shift+Print exec --no-startup-id scrot -u ~/Pictures/Screenshots/window-%Y%m%d-%H:%M:%S.png & notify-send -u low $'Window screeshot' 'saved to ~/Pictures/Screenshots'
+bindsym Print exec --no-startup-id scrot ~/Pictures/scrots/screenshot-%Y%m%d-%H:%M:%S.png & notify-send -u low 'Screenshot' 'saved to ~/Pictures/scrots'
+bindsym Shift+Print exec --no-startup-id scrot -u ~/Pictures/scrots/window-%Y%m%d-%H:%M:%S.png & notify-send -u low 'Window screeshot' 'saved to ~/Pictures/scrots'

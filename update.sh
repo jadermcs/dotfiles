@@ -1,8 +1,11 @@
-cp -r ~/.config/{dunst,i3,ranger,rofi,polybar,zathura} .
+cp -r ~/.config/dunst .
+cp -r ~/.config/i3 .
+cp -r ~/.config/ranger .
+cp -r ~/.config/rofi .
+cp -r ~/.config/polybar .
+cp -r ~/.config/zathura .
 
-mkdir -p nvim
-cp ~/.config/nvim/init.vim nvim/
-
+cp ~/.vimrc .
 cp ~/.zshrc .
 cp ~/.Xresources .
 

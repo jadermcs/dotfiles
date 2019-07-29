@@ -1,5 +1,6 @@
 ;; init.el --- Emacs configuration
-
+;;; Commentary:
+;; Jader Martins config.
 ;; INSTALL PACKAGES
 ;; --------------------------------------
 (require 'package)
@@ -13,7 +14,7 @@
 	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 (package-initialize)
-
+;;; Code:
 (when (not package-archive-contents)
   (package-refresh-contents))
 
@@ -55,6 +56,7 @@
 
 (load-theme 'wombat)
 (set-face-attribute 'default nil
+		    :family "Iosevka Term"
                     :height 100
                     :weight 'normal
                     :width 'normal)
@@ -63,13 +65,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (rust-mode yasnippet-snippets python-mode magit ivy haskell-mode flycheck company))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+    (rust-mode yasnippet-snippets python-mode magit ivy haskell-mode flycheck company)))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
+;;; init.el ends here
