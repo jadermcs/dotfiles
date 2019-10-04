@@ -9,9 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# exec --no-startup-id redshift
+exec --no-startup-id redshift
 exec --no-startup-id feh --randomize --bg-scale ~/Pictures/wall/*
 exec --no-startup-id xautolock -time 10 -locker /usr/bin/i3lock-fancy -detectsleep
+exec --no-startup-id compton -b --config ~/.config/compton/config
+exec --no-startup-id dropbox start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 set $TERMINAL urxvt

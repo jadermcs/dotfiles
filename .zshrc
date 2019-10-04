@@ -98,3 +98,8 @@ function open() {
 function cpy() {
     xclip -selection clipboard $1
 }
+export LD_LIBRARY_PATH=/usr/lib/cuda/lib64:$LD_LIBRARY_PATH
+export TERMINAL=urxvt
+
+# added by travis gem
+[ -f /home/jader/.travis/travis.sh ] && source /home/jader/.travis/travis.sh
