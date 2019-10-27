@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jader/.oh-my-zsh
 
-ZSH_THEME="lambda"
+ZSH_THEME="madc"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,6 +52,7 @@ plugins=(
     git
     python
     docker
+    zsh-syntax-highlighting
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -81,6 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 export PATH=$HOME/.bin:$PATH
+export PATH=/sbin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
   . ~/.config/exercism/exercism_completion.zsh

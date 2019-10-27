@@ -1,6 +1,6 @@
 set adjust-open                 "width"
 set selection-clipboard         "clipboard"
-set font                        "Iosevka Term 9"
+set font                        "Px427 ATI 8x8 6"
 set synctex                     true
 
 set statusbar-bg                "#313131"

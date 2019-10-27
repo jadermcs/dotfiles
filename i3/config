@@ -11,7 +11,7 @@
 
 exec --no-startup-id redshift
 exec --no-startup-id feh --randomize --bg-scale ~/Pictures/wall/*
-exec --no-startup-id xautolock -time 10 -locker /usr/bin/i3lock-fancy -detectsleep
+exec --no-startup-id xautolock -time 20 -locker /usr/bin/i3lock-fancy -detectsleep -corners -00-
 exec --no-startup-id compton -b --config ~/.config/compton/config
 exec --no-startup-id dropbox start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -27,8 +27,8 @@ font pango:Iosevka Term 9
 
 default_border pixel 2
 default_floating_border pixel 2
-gaps inner 6
-gaps outer 0
+# gaps inner 6
+# gaps outer 0
 
 #hide_edge_borders smart
 smart_gaps on
@@ -181,11 +181,11 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 # class                 border  bground text    split
 client.focused          #5DA9f6 #5DA9f6 #313131 #5DA9f6
-client.focused_inactive #313131 #313131 #FFFFFF #313131
-client.unfocused        #313131 #313131 #FFFFFF #313131
-client.urgent           #313131 #FF615A #FFFFFF #FF615A
+client.focused_inactive #171717 #171717 #FFFFFF #171717
+client.unfocused        #171717 #171717 #FFFFFF #171717
+client.urgent           #171717 #FF615A #FFFFFF #FF615A
 client.placeholder      #000000 #0C0C0C #DEDACF #0C0C0C
-client.background       #313131
+client.background       #171717
 
 
 # Pulse Audio controls

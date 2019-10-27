@@ -56,7 +56,7 @@
 
 (load-theme 'wombat)
 (set-face-attribute 'default nil
-		    :family "Iosevka Term"
+		    :family "Monospace"
                     :height 100
                     :weight 'normal
                     :width 'normal)
@@ -67,6 +67,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(delete-selection-mode nil)
+ '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
     (rust-mode yasnippet-snippets python-mode magit ivy haskell-mode flycheck company)))

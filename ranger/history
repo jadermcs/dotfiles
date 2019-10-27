@@ -1,0 +1,32 @@
+q
+open_with 1
+rename SYSTEMv12.s
+rename brml
+rename brml.pdf
+G
+g
+gm
+open_with open
+cut 
+paste 
+open_with
+gM
+dD
+open_with vi
+ 
+rename FoudationOfMachineLearning.pdf
+rename cpbook.pdf
+p
+rn
+mv
+rename Brooklyn Nine-Nine S06E08 He Said, She Said.mkv
+unzip
+open_with 
+open_with unzip
+rename segcomp.pdf
+mkdir lab05
+cut
+paste
+q!
+
+delete

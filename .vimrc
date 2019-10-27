@@ -29,21 +29,15 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 Plug 'rking/ag.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'mhinz/vim-startify'
-Plug 'lervag/vimtex'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -59,7 +53,7 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-session'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -87,6 +81,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 " vim-tex
+Plug 'lervag/vimtex'
 set spelllang=pt_br,en_us
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -157,7 +152,8 @@ let g:session_command_aliases = 1
 "*****************************************************************************
 syntax on
 set ruler
-set number
+set relativenumber number
+set cursorline
 
 let no_buffers_menu=1
 silent! colorscheme wombat256dave
@@ -223,15 +219,6 @@ nnoremap N Nzzzv
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
-
-" vim-airline
-let g:airline_theme = 'wombat'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
 
 "*****************************************************************************
 "" Abbreviations
@@ -468,9 +455,6 @@ let g:jedi#smart_auto_mappings = 0
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
 
-" vim-airline
-let g:airline#extensions#virtualenv#enabled = 1
-
 " Syntax highlight
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python', 'latex']
@@ -489,33 +473,3 @@ endif
 "*****************************************************************************
 "" Convenience variables
 "*****************************************************************************
-
-" vim-airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = '|'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
-let g:ascii = [
-      \' ██▒   █▓ ██▓ ███▄ ▄███▓',
-      \'▓██░   █▒▓██▒▓██▒▀█▀ ██▒',
-      \' ▓██  █▒░▒██▒▓██    ▓██░',
-      \'  ▒██ █░░░██░▒██    ▒██ ',
-      \'   ▒▀█░  ░██░▒██▒   ░██▒',
-      \'   ░ ▐░  ░▓  ░ ▒░   ░  ░',
-      \'   ░ ░░   ▒ ░░  ░      ░',
-      \'     ░░   ▒ ░░      ░   ',
-      \'      ░   ░         ░   ',
-      \'     ░                  ',
-      \]
-let g:startify_custom_header = g:ascii
-set number relativenumber
-set cursorline
