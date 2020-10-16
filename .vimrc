@@ -1,5 +1,11 @@
 " vim-bootstrap
 
+" Syntax highlight
+" Default highlight is better than polyglot
+let g:polyglot_disabled = ['python', 'latex']
+let python_highlight_all = 1
+
+
 "*****************************************************************************
 "" Vim-PLug core
 "*****************************************************************************
@@ -88,7 +94,15 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
-
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
 "*****************************************************************************
 "*****************************************************************************
 
@@ -170,12 +184,6 @@ if has("gui_running")
   endif
 else
   let g:CSApprox_loaded = 1
-
-  " IndentLine
-  let g:indentLine_enabled = 1
-  let g:indentLine_concealcursor = 0
-  let g:indentLine_char = '┆'
-  let g:indentLine_faster = 1
 
 
   if $COLORTERM == 'gnome-terminal'
@@ -341,13 +349,6 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
-" ripgrep
-if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  set grepprg=rg\ --vimgrep
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-endif
-
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
@@ -455,12 +456,6 @@ let g:jedi#smart_auto_mappings = 0
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
 
-" Syntax highlight
-" Default highlight is better than polyglot
-let g:polyglot_disabled = ['python', 'latex']
-let python_highlight_all = 1
-
-
 
 "*****************************************************************************
 "*****************************************************************************
@@ -473,3 +468,6 @@ endif
 "*****************************************************************************
 "" Convenience variables
 "*****************************************************************************
+
+set noswapfile
+set colorcolumn=80

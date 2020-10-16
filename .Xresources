@@ -1,5 +1,5 @@
-URxvt*font:			xft:Px437 ATI 8x16:size=12
-URxvt*boldFont:			xft:Px437 ATI 8x16:size=12
+URxvt*font:			xft:Iosevka Term:size=10
+URxvt*boldFont:			xft:Iosevka Term:size=10:style=Bold
 URxvt.letterSpace:          -1
 URxvt*intensityStyles:		false
 URxvt*urgentOnBell:		true

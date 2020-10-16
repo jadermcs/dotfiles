@@ -10,11 +10,12 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 exec --no-startup-id redshift
-exec --no-startup-id feh --randomize --bg-scale ~/Pictures/wall/*
-exec --no-startup-id xautolock -time 20 -locker /usr/bin/i3lock-fancy -detectsleep -corners -00-
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/wall/*
+exec --no-startup-id xautolock -time 30 -locker /usr/bin/i3lock-fancy -detectsleep -corners +-00
 exec --no-startup-id compton -b --config ~/.config/compton/config
 exec --no-startup-id dropbox start
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec xrandr --output HDMI1 --auto --left-of eDP1
 
 set $TERMINAL urxvt
 set $mod Mod4
@@ -23,7 +24,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Iosevka Term 9
+font pango:Iosevka Term 10
 
 default_border pixel 2
 default_floating_border pixel 2
@@ -47,7 +48,7 @@ bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -modi drun
 bindsym $mod+Tab exec rofi -show window
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -212,3 +213,20 @@ for_window [class="mpv"] $FLOAT-noborder
 # print screen
 bindsym Print exec --no-startup-id scrot ~/Pictures/scrots/screenshot-%Y%m%d-%H:%M:%S.png & notify-send -u low 'Screenshot' 'saved to ~/Pictures/scrots'
 bindsym Shift+Print exec --no-startup-id scrot -u ~/Pictures/scrots/window-%Y%m%d-%H:%M:%S.png & notify-send -u low 'Window screeshot' 'saved to ~/Pictures/scrots'
+
+bar {
+    status_command    i3status --config ~/.config/i3/i3status.conf
+    position          bottom
+    workspace_buttons yes
+
+    colors {
+        background #171717
+        statusline #dedacf
+        separator  #dedacf
+
+        focused_workspace  #5da9f6 #353535 #dedacf
+        active_workspace   #ffffff #353535 #888888
+        inactive_workspace #171717 #353535 #888888
+        urgent_workspace   #ffffff #ff615a
+    }
+}

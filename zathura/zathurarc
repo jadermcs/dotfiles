@@ -1,11 +1,10 @@
 set adjust-open                 "width"
 set selection-clipboard         "clipboard"
-set font                        "Px427 ATI 8x8 6"
+set font                        "Iosevka Term 10"
 set synctex                     true
 
 set statusbar-bg                "#313131"
 set statusbar-fg                "#b1e969"
-set completion-hightlight-bg    "#b1e969"
 set inputbar-fg                 "#dedacf"
 set default-bg                  "#353535"
 set recolor-darkcolor           "#dedacf"

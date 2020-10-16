@@ -21,12 +21,17 @@ rn
 mv
 rename Brooklyn Nine-Nine S06E08 He Said, She Said.mkv
 unzip
-open_with 
 open_with unzip
 rename segcomp.pdf
 mkdir lab05
+q!
+open_with
+open_with 
+rename Software Engineering by Ian Sommerville (z-lib.or
+rename Software Engineering by Ian Sommerville (z-lib.org).pdf
+delete 
+info
+
 cut
 paste
-q!
-
 delete

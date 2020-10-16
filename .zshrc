@@ -52,7 +52,6 @@ plugins=(
     git
     python
     docker
-    zsh-syntax-highlighting
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,6 +93,7 @@ fi
 alias zshconfig="vi ~/.zshrc"
 alias viconfig="vi ~/.vimrc"
 alias feh="feh --image-bg \#353535"
+alias pomodoro="sh ~/.config/pomodoro.sh & disown"
 function open() {
     xdg-open $1 & disown
 }

@@ -1,4 +1,1 @@
-rofi.font:          Iosevka Term 9
-rofi.show-icons:    true
-rofi.drun-icon-theme: Papirus
-rofi.theme: ~/.config/rofi/themes/flat-red
+rofi.theme: /home/jader/.config/rofi/themes/flat-green.rasi
