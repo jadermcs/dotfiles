@@ -4,6 +4,7 @@ cp -r ~/.config/ranger .
 cp -r ~/.config/rofi .
 cp -r ~/.config/polybar .
 cp -r ~/.config/zathura .
+cp -r ~/.newsboat .
 
 cp ~/.vimrc .
 cp ~/.zshrc .
